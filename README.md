@@ -24,7 +24,7 @@ php bin/magento setup:static-content:deploy -f
 
 After installing the module, configure it by following these steps:
 
-![image](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/assets/140082778/5180644a-2227-48e4-843e-2b05ea08bdd1)
+![image](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/assets/140082778/721276a5-a282-45b8-b13f-fb85b1f340d9)
 ![image](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/assets/140082778/f372dbcc-d6ec-4ebe-8d4e-0a38d1b5cb3d)
 ![image](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/assets/140082778/d5f2b7b3-d738-43af-9a12-2e971cd9c6f1)
 ![image](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/assets/140082778/f306f2b5-5beb-49f9-86ab-b44f3d5ddd21)
