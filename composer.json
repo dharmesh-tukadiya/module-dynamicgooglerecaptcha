@@ -9,13 +9,12 @@
             "name": "Dharmesh N Tukadiya"
         }
     ],
-    "minimum-stability":"dev",
+    "minimum-stability":"stable",
     "require": {
 	"php": ">=7.4.0",
         "magento/framework": "*",
         "magento/module-re-captcha-ui": "*",
-	"magento/product-community-edition": ">=2.4.0",
-	"dharmesh-tukadiya/module-dynamicgooglerecaptcha": "dev"
+	"magento/product-community-edition": ">=2.4.0"
     },
     "autoload": {
         "files": [
