@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="DnTukadiya\DynamicGoogleReCaptcha\Api\DynamicCaptchaRepositoryInterface" type="DnTukadiya\DynamicGoogleReCaptcha\Model\DynamicCaptchaRepository"/>
+	<preference for="DnTukadiya\DynamicGoogleReCaptcha\Api\Data\DynamicCaptchaInterface" type="DnTukadiya\DynamicGoogleReCaptcha\Model\DynamicCaptcha"/>
+	<preference for="DnTukadiya\DynamicGoogleReCaptcha\Api\Data\DynamicCaptchaSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="DnTukadiya\DynamicGoogleReCaptcha\Model\ResourceModel\DynamicCaptcha\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">dntukadiya_dynamicgooglerecaptcha_dynamic_captcha</argument>
+			<argument name="resourceModel" xsi:type="string">DnTukadiya\DynamicGoogleReCaptcha\Model\ResourceModel\DynamicCaptcha\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing_data_source" xsi:type="string">DnTukadiya\DynamicGoogleReCaptcha\Model\ResourceModel\DynamicCaptcha\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

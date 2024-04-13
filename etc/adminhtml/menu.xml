@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="DnTukadiya::top_level" title="DnTukadiya" module="DnTukadiya_DynamicGoogleReCaptcha" sortOrder="100" resource="Magento_Backend::content"/>
+		<add id="DnTukadiya_DynamicGoogleReCaptcha::dntukadiya_dynamicgooglerecaptcha_dynamic_captcha" title="Dynamic Captcha" module="DnTukadiya_DynamicGoogleReCaptcha" sortOrder="9999" resource="Magento_Backend::content" parent="DnTukadiya::top_level" action="dntukadiya_dynamicgooglerecaptcha/dynamiccaptcha/index"/>
+	</menu>
+</config>

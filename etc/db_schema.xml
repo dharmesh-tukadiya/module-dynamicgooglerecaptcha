@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="dntukadiya_dynamicgooglerecaptcha_dynamic_captcha" resource="default" engine="innodb" comment="dntukadiya_dynamicgooglerecaptcha_dynamic_captcha Table">
+		<column xsi:type="int" name="dynamic_captcha_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="dynamic_captcha_id"/>
+		</constraint>
+		<constraint xsi:type="unique" referenceId="UNIQUE_DYNAMIC_CAPTCHA_IDENTIFIER">
+			<column name="identifier"/>
+		</constraint>
+		<column name="identifier" nullable="false" xsi:type="varchar" comment="Form Identifier" length="255"/>
+		<column name="website_id" nullable="false" xsi:type="int" comment="Website ID"/>
+		<column name="show_controller_path" nullable="false" xsi:type="text" comment="show_controller_path"/>
+		<column name="captcha_type" nullable="false" xsi:type="varchar" comment="captcha_type" length="255"/>
+		<column name="status" nullable="false" xsi:type="boolean" comment="status"/>
+		<column name="action_method" nullable="false" xsi:type="varchar" comment="action_method" length="255"/>
+		<column name="submit_controller_path" nullable="false" xsi:type="text" comment="submit_controller_path"/>
+		<column name="target_element_id" nullable="false" xsi:type="text" comment="target_element_id"/>
+	</table>
+</schema>

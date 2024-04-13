@@ -1,0 +1,204 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing.dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_columns</spinner>
+		<deps>
+			<dep>dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing.dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing_data_source</dep>
+		</deps>
+		<buttons>
+			<button name="add">
+				<url path="*/*/new"/>
+				<class>primary</class>
+				<label translate="true">Add New Dynamic Captcha</label>
+			</button>
+		</buttons>
+	</settings>
+	<dataSource name="dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">dynamic_captcha_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>DnTukadiya_DynamicGoogleReCaptcha::dynamic_captcha</aclResource>
+		<dataProvider name="dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>dynamic_captcha_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<massaction name="listing_massaction">
+		<action name="delete">
+			<settings>
+				<confirm>
+					<message translate="true">Are you sure you want to delete selected items?</message>
+					<title translate="true">Delete Items</title>
+				</confirm>
+				<url path="dntukadiya_dynamicgooglerecaptcha/dynamiccaptcha/massDelete"/>
+				<type>delete</type>
+				<label translate="true">Delete</label>
+			</settings>
+		</action>
+	</massaction>
+	<columns name="dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_columns">
+		<settings>
+			<editorConfig>
+				<param name="selectProvider" xsi:type="string">dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing.dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing.dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_columns.ids</param>
+				<param name="enabled" xsi:type="boolean">true</param>
+				<param name="indexField" xsi:type="string">dynamic_captcha_id</param>
+				<param name="clientConfig" xsi:type="array">
+					<item name="saveUrl" xsi:type="url" path="dntukadiya_dynamicgooglerecaptcha/dynamiccaptcha/inlineEdit"/>
+					<item name="validateBeforeSave" xsi:type="boolean">false</item>
+				</param>
+			</editorConfig>
+			<childDefaults>
+				<param name="fieldAction" xsi:type="array">
+					<item name="provider" xsi:type="string">dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing.dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_listing.dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_columns_editor</item>
+					<item name="target" xsi:type="string">startEdit</item>
+					<item name="params" xsi:type="array">
+						<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+						<item name="1" xsi:type="boolean">true</item>
+					</item>
+				</param>
+			</childDefaults>
+		</settings>
+		<selectionsColumn name="ids" sortOrder="0">
+			<settings>
+				<indexField>dynamic_captcha_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="dynamic_captcha_id" sortOrder="10">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="identifier" sortOrder="20">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Identifier</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="website_id" component="Magento_Ui/js/grid/columns/select" sortOrder="30">
+			<settings>
+				<options class="DnTukadiya\DynamicGoogleReCaptcha\Model\Config\Source\Websites"/>
+				<filter>select</filter>
+				<label translate="true">Website ID</label>
+				<dataType>select</dataType>
+				<editor>
+					<editorType>select</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="status" component="Magento_Ui/js/grid/columns/select" sortOrder="40">
+			<settings>
+				<options class="Magento\Config\Model\Config\Source\Enabledisable"/>
+				<filter>select</filter>
+				<dataType>select</dataType>
+				<label translate="true">Status</label>
+				<editor>
+					<editorType>select</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="captcha_type" component="Magento_Ui/js/grid/columns/select" sortOrder="50">
+			<settings>
+				<options class="Magento\ReCaptchaAdminUi\Model\OptionSource\Type"/>
+				<filter>select</filter>
+				<label translate="true">Captcha Version</label>
+				<dataType>select</dataType>
+				<editor>
+					<editorType>select</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="show_controller_path" sortOrder="60">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">View Path</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="submit_controller_path" sortOrder="70">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Submit Path</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="action_method" component="Magento_Ui/js/grid/columns/select" sortOrder="90">
+			<settings>
+				<options class="DnTukadiya\DynamicGoogleReCaptcha\Model\Config\Source\ActionMethods"/>
+				<filter>select</filter>
+				<dataType>select</dataType>
+				<label translate="true">Form Action</label>
+				<editor>
+					<editorType>select</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="target_element_id" sortOrder="100">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Captcha Container</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">true</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<actionsColumn name="actions" class="DnTukadiya\DynamicGoogleReCaptcha\Ui\Component\Listing\Column\DynamiccaptchaActions" sortOrder="110">
+			<settings>
+				<indexField>dynamic_captcha_id</indexField>
+				<resizeEnabled>false</resizeEnabled>
+				<resizeDefaultWidth>107</resizeDefaultWidth>
+			</settings>
+		</actionsColumn>
+	</columns>
+</listing>

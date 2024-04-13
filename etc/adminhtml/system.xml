@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="dntukadiya" translate="label" sortOrder="100">
+            <label>Dharmesh Tukadiya</label>
+        </tab>
+        <section id="dntukadiya_dynamicgooglerecaptcha" sortOrder="10" showInDefault="1" translate="label">
+            <label>Dynamic Google Recaptcha</label>
+            <tab>dntukadiya</tab>
+            <resource>DnTukadiya_DynamicGoogleReCaptcha::config_dntukadiya_dynamicgooglerecaptcha</resource>
+            <group id="module" sortOrder="10" showInDefault="1" translate="label">
+                <label>Module Configuration</label>
+                <field id="status" type="select" sortOrder="10" showInDefault="1" translate="label">
+                    <label>Module Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

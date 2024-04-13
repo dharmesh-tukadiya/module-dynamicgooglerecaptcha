@@ -1,0 +1,25 @@
+{
+    "name": "dharmesh-tukadiya/module-dynamicgooglerecaptcha",
+    "description": "Adding Google Recaptcha Verification to any controller.",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Dharmesh N Tukadiya"
+        }
+    ],
+    "require": {
+        "php": "~7.4.0||~8.1.0",
+        "magento/framework": "*",
+        "magento/module-re-captcha-ui": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "DnTukadiya\\DynamicGoogleReCaptcha\\": ""
+        }
+    }
+}

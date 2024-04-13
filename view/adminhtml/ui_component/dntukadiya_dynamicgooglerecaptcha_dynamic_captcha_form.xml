@@ -1,0 +1,205 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_form.dynamic_captcha_form_data_source</item>
+		</item>
+		<item name="label" xsi:type="string" translate="true">General Information</item>
+		<item name="template" xsi:type="string">templates/form/collapsible</item>
+	</argument>
+	<settings>
+		<buttons>
+			<button name="back" class="DnTukadiya\DynamicGoogleReCaptcha\Block\Adminhtml\Dynamic\Captcha\Edit\BackButton"/>
+			<button name="delete" class="DnTukadiya\DynamicGoogleReCaptcha\Block\Adminhtml\Dynamic\Captcha\Edit\DeleteButton"/>
+			<button name="save" class="DnTukadiya\DynamicGoogleReCaptcha\Block\Adminhtml\Dynamic\Captcha\Edit\SaveButton"/>
+			<button name="save_and_continue" class="DnTukadiya\DynamicGoogleReCaptcha\Block\Adminhtml\Dynamic\Captcha\Edit\SaveAndContinueButton"/>
+		</buttons>
+		<namespace>dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_form</namespace>
+		<dataScope>data</dataScope>
+		<deps>
+			<dep>dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_form.dynamic_captcha_form_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="dynamic_captcha_form_data_source">
+		<argument name="data" xsi:type="array">
+			<item name="js_config" xsi:type="array">
+				<item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+			</item>
+		</argument>
+		<settings>
+			<submitUrl path="*/*/save"/>
+		</settings>
+		<dataProvider name="dynamic_captcha_form_data_source" class="DnTukadiya\DynamicGoogleReCaptcha\Model\Dynamiccaptcha\DataProvider">
+			<settings>
+				<requestFieldName>dynamic_captcha_id</requestFieldName>
+				<primaryFieldName>dynamic_captcha_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<fieldset name="general">
+		<settings>
+			<label>General</label>
+		</settings>
+		<field name="identifier" formElement="input" sortOrder="10">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="notice" xsi:type="string" translate="true">example : your_custom_identifier. It's advise to use text and underscore only!</item>
+					<item name="source" xsi:type="string">dynamic_captcha</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Identifier</label>
+				<dataScope>identifier</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="website_id" formElement="select" sortOrder="20">
+			<argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">DnTukadiya\DynamicGoogleReCaptcha\Model\Config\Source\Websites</item>
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">website_id</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Website</label>
+				<dataScope>website_id</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="status" formElement="checkbox" sortOrder="30">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">dynamic_captcha</item>
+					<item name="default" xsi:type="number">1</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>boolean</dataType>
+				<label translate="true">Status</label>
+				<dataScope>status</dataScope>
+			</settings>
+			<formElements>
+				<checkbox>
+					<settings>
+						<valueMap>
+							<map name="false" xsi:type="number">0</map>
+							<map name="true" xsi:type="number">1</map>
+						</valueMap>
+						<prefer>toggle</prefer>
+					</settings>
+				</checkbox>
+			</formElements>
+		</field>
+		<field name="captcha_type" formElement="select" sortOrder="40">
+			<argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">Magento\ReCaptchaAdminUi\Model\OptionSource\Type</item>
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">dynamic_captcha</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Captcha Version</label>
+				<dataScope>captcha_type</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="show_controller_path" formElement="input" sortOrder="50">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="notice" xsi:type="string" translate="true">Do not enter path (url) with domain name.</item>
+					<item name="source" xsi:type="string">dynamic_captcha</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">View Path (URL)</label>
+				<dataScope>show_controller_path</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="submit_controller_path" formElement="input" sortOrder="60">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="notice" xsi:type="string" translate="true">Do not enter path (url) with domain name.</item>
+					<item name="source" xsi:type="string">dynamic_captcha</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Submit Path (URL)</label>
+				<dataScope>submit_controller_path</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="action_method" formElement="select" sortOrder="80">
+			<argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">DnTukadiya\DynamicGoogleReCaptcha\Model\Config\Source\ActionMethods</item>
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">action_method</item>
+					<item name="notice" xsi:type="string" translate="true">Form Submit methods like POST, GET, PUT, DELETE...</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Form Action</label>
+				<dataScope>action_method</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="target_element_id" formElement="input" sortOrder="90">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">dynamic_captcha</item>
+					<item name="notice" xsi:type="string" translate="true">(Query Selector. eg. #unique-container-id, .block.container-captcha... Any valid css selector.  Inner HTML of the container should be empty.)</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Captcha Container</label>
+				<dataScope>target_element_id</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+	</fieldset>
+</form>
