@@ -32,8 +32,9 @@ After installing the module, configure it by following these steps:
 ![image](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/assets/140082778/f306f2b5-5beb-49f9-86ab-b44f3d5ddd21)
 Paste Below Content & Save
 ```html
-<form action="dynamic_captcha/render/captchatest" id="custom-page-form" method="post"> <input type="text" name="name"
-        placeholder="Enter your name"> <input type="submit" name="submit" id="submit">
+<form action="dynamic_captcha/render/captchatest" id="custom-page-form" method="post">
+    <input type="text" name="name" placeholder="Enter your name">
+    <input type="submit" name="submit" id="submit">
     <div id="gcaptchacontainer"></div>
 </form>
 ```
@@ -61,7 +62,7 @@ Contributions are welcome! If you would like to improve this module, please fork
 
 ### License
 
-This module is licensed under the MIT License - see the [LICENSE](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/blob/main/LICENSE) file for details.
+This module is licensed under the MIT License - see the [LICENSE](https://github.com/dharmesh-tukadiya/module-dynamicgooglerecaptcha/blob/main/LICENSE.txt) file for details.
 
 ### Author
 
