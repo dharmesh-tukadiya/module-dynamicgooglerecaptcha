@@ -13,7 +13,8 @@
     "require": {
 	"php": ">=7.4.0",
         "magento/framework": "*",
-        "magento/module-re-captcha-ui": "*"
+        "magento/module-re-captcha-ui": "*",
+	"magento/product-community-edition": ">=2.4.0"
     },
     "autoload": {
         "files": [
