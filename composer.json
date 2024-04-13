@@ -9,6 +9,7 @@
             "name": "Dharmesh N Tukadiya"
         }
     ],
+    "minimum-stability":"dev",
     "require": {
         "php": "~7.4.0||~8.1.0",
         "magento/framework": "*",
