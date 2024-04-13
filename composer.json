@@ -15,7 +15,7 @@
         "magento/framework": "*",
         "magento/module-re-captcha-ui": "*",
 	"magento/product-community-edition": ">=2.4.0",
-	"dharmesh-tukadiya/module-dynamicgooglerecaptcha": "dev-master"
+	"dharmesh-tukadiya/module-dynamicgooglerecaptcha": "dev"
     },
     "autoload": {
         "files": [
