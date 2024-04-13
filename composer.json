@@ -1,27 +1,38 @@
 {
-    "name": "dharmesh-tukadiya/module-dynamicgooglerecaptcha",
-    "description": "Adding Google Recaptcha Verification to any controller.",
-    "type": "magento2-module",
-    "license": "GPL-3.0",
-    "version": "1.0.0",
-    "authors": [
-        {
-            "name": "Dharmesh N Tukadiya"
-        }
-    ],
-    "minimum-stability":"stable",
-    "require": {
-	"php": ">=7.4.0",
-        "magento/framework": "*",
-        "magento/module-re-captcha-ui": "*",
-	"magento/product-community-edition": ">=2.4.0"
-    },
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "DnTukadiya\\DynamicGoogleReCaptcha\\": ""
-        }
+  "name": "dharmesh-tukadiya/module-dynamicgooglerecaptcha",
+  "description": "Google ReCAPTCHA Extension for Magento 2 that helps adding a google reCAPTCHA to any controller with any request method to reduce spam.",
+  "type": "magento2-module",
+  "license": "GPL-3.0",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Dharmesh N Tukadiya",
+      "homepage": "https://dharmesh-tukadiya.github.io/",
+      "role": "Magento 2 Developer"
     }
+  ],
+  "minimum-stability": "dev",
+  "keywords": [
+    "magento 2",
+    "magento 2 recaptcha",
+    "magento recaptcha",
+    "magento 2 google recaptcha",
+    "magento google recaptcha",
+    "magento 2 dynamic google recaptcha",
+    "magento dynamic google recaptcha"
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "magento/framework": "*",
+    "magento/module-re-captcha-ui": "*",
+    "magento/product-community-edition": ">=2.4.0"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "DnTukadiya\\DynamicGoogleReCaptcha\\": ""
+    }
+  }
 }
