@@ -1,6 +1,8 @@
 ## Magento 2 Module: Dynamic Google reCAPTCHA
 
-This module integrates Dynamic Google reCAPTCHA with your Magento 2 store's frontend forms to enhance security against spam and abuse. It allows you to dynamically load and configure Google reCAPTCHA settings based on specific criteria, providing flexibility and customization.
+This module integrates Dynamic Google reCAPTCHA with your Magento 2 store's frontend forms to enhance security against spam and abuse.
+It allows you to dynamically load and configure Google reCAPTCHA on any form on any frontend controller(URL).
+You can add Google reCAPTCHA verfication to any frontend url.
 
 ### Installation
 
