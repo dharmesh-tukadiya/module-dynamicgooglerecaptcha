@@ -1,0 +1,19 @@
+{
+    "dntukadiya_dynamicgooglerecaptcha_dynamic_captcha": {
+        "column": {
+            "dynamic_captcha_id": true,
+            "identifier": true,
+            "website_id": true,
+            "show_controller_path": true,
+            "captcha_type": true,
+            "status": true,
+            "action_method": true,
+            "submit_controller_path": true,
+            "target_element_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "DNTUKADIYA_DYNAMICGOOGLERECAPTCHA_DYNAMIC_CAPTCHA_IDENTIFIER": true
+        }
+    }
+}
