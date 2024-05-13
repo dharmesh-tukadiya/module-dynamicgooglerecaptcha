@@ -4,17 +4,6 @@ This module integrates Dynamic Google reCAPTCHA with your Magento 2 store's fron
 It allows you to dynamically load and configure Google reCAPTCHA on any form on any frontend controller(URL).
 You can add Google reCAPTCHA verfication to any frontend url.
 
-### Installation
-
-You can install this module via Composer. Run the following commands in your Magento 2 root directory:
-
-```bash
-composer require dharmesh-tukadiya/module-dynamicgooglerecaptcha
-php bin/magento setup:upgrade
-php bin/magento setup:di:compile
-php bin/magento setup:static-content:deploy -f
-```
-
 ### Features
 
 - **Dynamic Configuration**: Configure Google reCAPTCHA settings dynamically based on specific conditions.
