@@ -43,7 +43,7 @@
 		<field name="identifier" formElement="input" sortOrder="10">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
-					<item name="notice" xsi:type="string" translate="true">example : your_custom_identifier. It's advise to use text and underscore only!</item>
+					<item name="notice" xsi:type="string" translate="true">example : your_custom_identifier. It's advised to use text and underscore only!</item>
 					<item name="source" xsi:type="string">dynamic_captcha</item>
 					<item name="validation" xsi:type="array">
 						<item name="required-entry" xsi:type="boolean">true</item>
@@ -131,6 +131,14 @@
 					<item name="source" xsi:type="string">dynamic_captcha</item>
 					<item name="validation" xsi:type="array">
 						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+					<item name="additionalInfo" xsi:type="string" translate="true">
+						<![CDATA[ 
+						<p>Please Use Below Values For Some Specific View Pages</p>
+						<p><strong>Home Page</strong> : /</p>
+						<p><strong>Product View Page</strong> : catalog_product_view </p>
+						<p><strong>Category View Page</strong> : catalog_category_view </p>
+						]]>
 					</item>
 				</item>
 			</argument>
