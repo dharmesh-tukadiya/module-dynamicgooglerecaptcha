@@ -3,5 +3,6 @@
 	<menu>
 		<add id="DnTukadiya::top_level" title="DnTukadiya" module="DnTukadiya_DynamicGoogleReCaptcha" sortOrder="100" resource="Magento_Backend::content"/>
 		<add id="DnTukadiya_DynamicGoogleReCaptcha::dntukadiya_dynamicgooglerecaptcha_dynamic_captcha" title="Dynamic Captcha" module="DnTukadiya_DynamicGoogleReCaptcha" sortOrder="9999" resource="Magento_Backend::content" parent="DnTukadiya::top_level" action="dntukadiya_dynamicgooglerecaptcha/dynamiccaptcha/index"/>
+		<add id="DnTukadiya_DynamicGoogleReCaptcha::dntukadiya_dynamicgooglerecaptcha_dynamic_captcha_configuration" title="Configuration" module="DnTukadiya_DynamicGoogleReCaptcha" sortOrder="9999" resource="Magento_Backend::content" parent="DnTukadiya::top_level" action="adminhtml/system_config/edit/section/dntukadiya_dynamicgooglerecaptcha"/>
 	</menu>
 </config>
