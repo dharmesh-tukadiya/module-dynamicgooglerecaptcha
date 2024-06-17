@@ -3,7 +3,7 @@
   "description": "Google ReCAPTCHA Extension for Magento 2 that helps adding a google reCAPTCHA to any controller with any request method to reduce spam.",
   "type": "magento2-module",
   "license": "GPL-3.0",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "authors": [
     {
       "name": "Dharmesh N Tukadiya",
