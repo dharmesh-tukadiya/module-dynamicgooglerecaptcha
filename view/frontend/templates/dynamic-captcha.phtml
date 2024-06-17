@@ -6,8 +6,17 @@
 ?>
 <script>
     const getCookieValue = key => ((new RegExp((key || '=') + '=(.*?); ', 'gm')).exec(document.cookie + '; ') || ['', null])[1];
+    const params = new URLSearchParams();
+    params.append('form_key', getCookieValue('form_key'));
+    <?php
+    $fullActionName = $this->getRequest()->getFullActionName();
+    if (in_array($fullActionName, ['catalog_product_view', 'catalog_category_view'])) { ?>
+        params.append('controller', '<?= $fullActionName ?>');
+    <?php } else { ?>
+        params.append('controller', window.location.pathname);
+    <?php } ?>
     window.addEventListener('DOMContentLoaded', () => {
-        fetch("<?= $block->getUrl('dynamic_captcha/render') ?>?form_key=" + getCookieValue('form_key') + "&controller=" + window.location.pathname, {
+        fetch(`<?= $block->getUrl('dynamic_captcha/render') ?>?${params.toString()}`, {
             method: 'POST'
         }).then(r => {
             return r.json();
