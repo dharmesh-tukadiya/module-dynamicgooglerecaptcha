@@ -1,1 +1,8 @@
-
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="DnTukadiya\DynamicGoogleReCaptcha\Block\DynamicCaptcha" name="dynamic_captcha" template="DnTukadiya_DynamicGoogleReCaptcha::dynamic-captcha-hyva.phtml" ifconfig="dntukadiya_dynamicgooglerecaptcha/module/status" />
+        </referenceContainer>
+    </body>
+</page>
