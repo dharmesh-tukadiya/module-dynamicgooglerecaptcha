@@ -31,10 +31,10 @@ class Index extends \Magento\Framework\App\Action\Action
         try {
             if ($this->moduleStatus) {
                 $request = $this->getRequest();
-                if (!($this->formKeyValidator->validate($request))) {
-                    echo $this->getInvalidRequestResponse();
-                    return;
-                }
+                // if (!($this->formKeyValidator->validate($request))) {
+                //     echo $this->getInvalidRequestResponse();
+                //     return;
+                // }
                 if (!(strtolower($request->getMethod()) == "post")) {
                     echo $this->getInvalidActionMethodResponse();
                     return;
