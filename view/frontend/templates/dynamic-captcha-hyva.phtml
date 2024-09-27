@@ -1,33 +1,39 @@
-
 <?php
 
 /**
  * @var DnTukadiya\DynamicGoogleReCaptcha\Block\DynamicCaptcha $block
  */
+$uniqueId = uniqid();
 ?>
 <script>
     const getCookieValue = key => ((new RegExp((key || '=') + '=(.*?); ', 'gm')).exec(document.cookie + '; ') || ['', null])[1];
-    const params = new URLSearchParams();
-    params.append('form_key', getCookieValue('form_key'));
-    <?php
-    $fullActionName = $this->getRequest()->getFullActionName();
-    if (in_array($fullActionName, ['catalog_product_view', 'catalog_category_view'])) { ?>
-        params.append('controller', '<?= $fullActionName ?>');
-    <?php } else { ?>
-        params.append('controller', window.location.pathname);
-    <?php } ?>
     window.addEventListener('load', (event) => {
-            fetch(`<?= $block->getUrl('dynamic_captcha/render') ?>?${params.toString()}`, {
-                method: 'POST'
-            }).then(r => {
-                return r.json();
-            }).then(r => {
-                if (r.success) {
-                    if (r.data && r.data.length) {
-                        renderDynamicGoogleRecaptcha(r);
+        let x = window.setInterval(() => {
+            if (Boolean(getCookieValue('form_key'))) {
+                window.clearInterval(x);
+                let form_key = getCookieValue('form_key');
+                const params = new URLSearchParams();
+                params.append('form_key', form_key);
+                <?php
+                $fullActionName = $this->getRequest()->getFullActionName();
+                if (in_array($fullActionName, ['catalog_product_view', 'catalog_category_view'])) { ?>
+                    params.append('controller', '<?= $fullActionName ?>');
+                <?php } else { ?>
+                    params.append('controller', window.location.pathname);
+                <?php } ?>
+                fetch(`<?= $block->getUrl('dynamic_captcha/render') ?>?${params.toString()}`, {
+                    method: 'POST'
+                }).then(r => {
+                    return r.json();
+                }).then(r => {
+                    if (r.success) {
+                        if (r.data && r.data.length) {
+                            renderDynamicGoogleRecaptcha(r);
+                        }
                     }
-                }
-            });
+                });
+            }
+        }, 500);
     });
 
     function renderDynamicGoogleRecaptcha(r) {
